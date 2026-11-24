@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher Dashboard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0F766E">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<main class="page">
+  <section class="hero">
+    <h1>Plan, assess and track every learner in one place</h1>
+    <p>Lesson plans, marks, attendance and progress charts for your classes.</p>
+  </section>
+  <section class="feat">
+    <div><b>Lesson planning</b><span>Write and track plans as draft or ready.</span></div>
+    <div><b>Assessments</b><span>Tests, exercises and assignments with marks.</span></div>
+    <div><b>Progress charts</b><span>Weekly, termly and per-learner results.</span></div>
+    <div><b>Attendance</b><span>Mark present or absent in a few taps.</span></div>
+  </section>
+  <section class="card">
+    <div id="openBox" hidden class="stack"><p id="welcome"></p><a class="btn btn-solid" href="dashboard.html">Open dashboard</a><button class="btn btn-outline" id="out" type="button">Log out</button></div>
+    <div id="formBox">
+      <div class="tabs" role="tablist" style="margin-bottom:12px">
+        <button role="tab" type="button" id="tSignup" aria-selected="true">Sign up</button>
+        <button role="tab" type="button" id="tLogin" aria-selected="false">Log in</button>
+      </div>
+      <form class="form" id="authForm">
+        <label id="nameRow">Your name<input name="name" autocomplete="name"></label>
+        <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Password (6+ characters)<input type="password" name="pw" required minlength="6" autocomplete="current-password"></label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn btn-solid" id="go">Create account</button>
+      </form>
+    </div>
+  </section>
+  <p class="muted">Accounts and data are stored on this device only.</p>
+</main>
+<script src="auth.js"></script>
+</body>
+</html>

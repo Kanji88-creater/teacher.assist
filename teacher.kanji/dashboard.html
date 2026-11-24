@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · Teacher Dashboard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0F766E">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<main class="page">
+
+  <header class="top">
+    <div>
+      <p class="muted" id="today"></p>
+      <h1 id="greeting">Good morning</h1>
+    </div>
+    <label class="select">
+      <span class="sr-only">Choose class</span>
+      <select id="classSelect"></select>
+    </label>
+  </header>
+
+  <section class="stats" id="stats" aria-label="Summary"></section>
+
+  <section id="alerts" aria-label="Reminders"></section>
+
+  <section class="actions" aria-label="Quick actions">
+    <a class="btn btn-solid" href="attendance.html">Take attendance</a>
+    <a class="btn btn-solid" href="marks.html">Enter marks</a>
+    <a class="btn btn-outline" href="lesson-plan-new.html">New lesson plan</a>
+    <a class="btn btn-outline" href="assessment-new.html">Create assessment</a>
+  </section>
+
+  <section aria-labelledby="work-h">
+    <h2 id="work-h">Lesson plans, exercises and assignments</h2>
+    <div class="stack" id="work"></div>
+  </section>
+
+  <section class="card" aria-labelledby="perf-h">
+    <div class="row">
+      <h2 id="perf-h">Class performance</h2>
+      <div class="tabs" role="tablist" aria-label="Performance period">
+        <button role="tab" aria-selected="true" data-view="weekly">Weekly</button>
+        <button role="tab" aria-selected="false" data-view="termly">Termly</button>
+      </div>
+    </div>
+    <p class="muted" id="perfNote"></p>
+    <div class="chart" id="chart"></div>
+    <ul class="legend">
+      <li><i class="dot strong"></i>70%+ Strong</li>
+      <li><i class="dot watch"></i>50–69% Watch</li>
+      <li><i class="dot support"></i>Below 50% Support</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="trend-h">
+    <h2 id="trend-h">Progress trend</h2>
+    <div class="chart" id="trend"></div>
+  </section>
+
+  <section aria-labelledby="pupils-h">
+    <h2 id="pupils-h">Pupil results</h2>
+    <div class="stack" id="pupils"></div>
+  </section>
+
+</main>
+
+<nav class="nav" aria-label="Main">
+  <a href="dashboard.html" data-r="home" aria-current="page">Home</a>
+  <a href="plans.html" data-r="plans">Plans</a>
+  <a href="assessments.html" data-r="assess">Assess</a>
+  <a href="learners.html" data-r="learners">Learners</a>
+  <a href="more.html" data-r="more">More</a>
+</nav>
+<div id="toast" role="status"></div>
+
+<script src="data.js"></script>
+<script src="zambia.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
